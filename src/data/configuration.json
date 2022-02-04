@@ -3,7 +3,7 @@
     {
       "navbar": "mobile", 
       "produtodisplay": "mobile", 
-      "carrinhodisplay": ""
+      "carrinhodisplay": "mobile"
     }
   ]
 }

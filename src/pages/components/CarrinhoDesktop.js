@@ -1,12 +1,11 @@
 import React from 'react';
 import {carrinho} from "./../../data/carrinho.json";
+import {compra} from './../../data/compra.json';
 import { InputNumber } from 'primereact/inputnumber';
 
 export default class CarrinhoDesktop extends React.Component{
   constructor(props){
     super();
-    console.log(this.props)
-  
     this.state = {
       carrinho: [],
       total: 0
@@ -19,12 +18,42 @@ export default class CarrinhoDesktop extends React.Component{
     this.props.cartItems.forEach(item => totalAmount = totalAmount + item.qtd*item.valor);
     this.setState(
       { 
-        carrinho: [...this.props.cartItems],
+        carrinho: [...this.props.cartItems.filter(item => item.qtd !== 0)],
         total: totalAmount
       });
   }
 
   componentWillUnmount() {
+
+  }
+
+ handleConfirmaCompra(){
+    if(this.state.carrinho.length!=0){
+      compra.push(carrinho);
+      carrinho.pop(carrinho);
+      this.setState({
+        carrinho: [],
+        total: 0})
+      alert("Parabéns, compra efetuada com sucesso!!");
+    }
+    else{
+      alert("Carrinho Vazio");
+    }
+  }
+
+  onValueChange(e, id) {
+    console.log(e);
+    let newArray = this.state.carrinho;
+    newArray[id].qtd = e.value;
+    newArray = newArray.filter(cartItem => {
+      return cartItem.qtd !== 0;
+    })
+    let totalAmount = 0;
+    newArray.forEach(item => totalAmount = totalAmount + item.qtd*item.valor);
+    this.setState({
+      carrinho: [...newArray],
+      total: totalAmount
+    })
 
   }
   
@@ -42,13 +71,12 @@ export default class CarrinhoDesktop extends React.Component{
                     </tr>
                 </thead>
                     <tbody>
-                    {this.state.carrinho.map((data,key) => { 
-                        
+                    {this.state.carrinho.map((data,key) => {
                         return(
                             <tr key={key}>
                                 <td>{data.descricao.substr(0, 25)}</td>
                                 <td>
-                                  <InputNumber value = {data.qtd} onValueChange = {(e) => data.qtd = e.event.value}/>
+                                  <InputNumber value = {data.qtd} onValueChange = {(e) => this.onValueChange(e, key)}/>
                                 </td>
                                 <td>R${data.valor}</td>
                                 <td>R${data.qtd*data.valor}</td>
@@ -60,7 +88,7 @@ export default class CarrinhoDesktop extends React.Component{
                         <td>Total</td>
                         <td></td>
                         <td></td>
-                        <td>R$ {this.total}</td>
+                        <td>R$ {this.state.total}</td>
                     </tr>
                     </tbody>
                 </table>

@@ -2,13 +2,13 @@
   margin: 100px auto;
 }
 
+carrinho-color {
+  background-color: '#007BBF';
+}
+
 /*Carrinho*/
 #containerCarrinho table{
-  border: 1px solid black;
   border-radius:20px;
-}
-#containerCarrinho table tr{
-  border-bottom: 1px solid;
 }
 
 button {

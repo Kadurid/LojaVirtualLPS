@@ -22,16 +22,11 @@ export default class NavbarMobile extends React.Component{
             <Link to='#' className='menu-bars'>
               <i className='pi pi-bars'color='#fff' onClick={() => this.setState({sidebar: !this.state.sidebar})}/>
             </Link>
-            <div className='col-6'>
-              <span className="p-float-label">
-                <InputText id="in" />
-                <label htmlFor='in'>Pesquise aqui</label>
-              </span>
-              
-            </div>
-            <div className='col-2 p-0 shopping-col'>
-              <i className="pi pi-shopping-cart" />
-            </div>
+            <Link to='/carrinho'>
+              <div className='col-2 mt-2 shopping-col'>
+                <i className="pi pi-shopping-cart" />
+              </div>
+            </Link>
           </div>
         </div>
           
