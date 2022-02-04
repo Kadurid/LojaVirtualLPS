@@ -1,0 +1,16 @@
+produto{
+
+}
+.produto-item{
+  
+}
+.produto-item figure img{
+  max-width: 8rem;
+}
+.produto-item .descricao{
+  text-align: justify;
+  
+}
+.produto-item .descricao header{
+  font-weight: bold;
+}

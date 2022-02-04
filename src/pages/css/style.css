@@ -1,0 +1,104 @@
+#container-produto, #containerCarrinho, #perfilContainer{
+  margin: 100px auto;
+}
+
+/*Carrinho*/
+#containerCarrinho table{
+  border: 1px solid black;
+  border-radius:20px;
+}
+#containerCarrinho table tr{
+  border-bottom: 1px solid;
+}
+
+button {
+  bottom: 50%;
+  font-size: 0.8rem;
+  padding: 0.2rem;
+  margin: 3.5rem;
+  background-color:  #007BBF;
+  border-radius:5rem;
+  border:0.1rem;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  width: 50%;
+  height: 2rem;
+  z-index: 0;
+  position: relative;
+}
+
+button.add {
+  background-color: #40c0f0;
+  width: 1.5rem;
+  position: relative;
+}
+
+button.remove {
+  background-color: #f04040;
+  width: 1.5rem;
+  position: relative;
+}
+
+button.badge {
+  background-color: #f04040;
+  border: none;
+  color: #ffffff;
+  width: 1.5rem;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.nav-text{
+  color: white;
+  text-align: center;
+  justify-content: center;
+}
+
+.block{
+  background-color: #a1a1a1;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  position: relative;
+  justify-content: center;
+  top: 5rem;
+  width: 90%;
+  height: fit-content;
+}
+
+.slider{
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-arrow{
+  position: absolute;
+  top: 40%;
+  right: 32px;;
+  color: black;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow{
+  position: absolute;
+  top: 40%;
+  left: 32px;
+  color: black;
+  cursor: pointer;
+  user-select: none;
+}
+
+.carousel-demo{
+  position: relative;
+  top: 10rem;
+  width: 100%;
+  
+}
+

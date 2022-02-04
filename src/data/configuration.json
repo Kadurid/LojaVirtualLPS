@@ -1,0 +1,10 @@
+{
+  "configuration" : [
+    {
+      "navbar": "mobile", 
+      "produtodisplay": "mobile", 
+      "carrinhodisplay": ""
+    }
+  ]
+}
+

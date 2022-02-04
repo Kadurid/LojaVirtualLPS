@@ -1,0 +1,15 @@
+#perfilContainer .foto{
+  border:1px solid black;
+  border-radius:20px;
+  padding: 30px;
+  text-align: center;
+}
+#perfilContainer .foto i{
+  font-size:200px;
+}
+
+#perfilContainer .info{
+  padding: 30px 40px;
+  font-size: 14px;
+  font-weight: normal;
+}

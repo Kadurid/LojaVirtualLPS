@@ -1,0 +1,10 @@
+.rodape{
+  background-color: #007BBF;
+  bottom:0;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  height: 5rem;
+}
