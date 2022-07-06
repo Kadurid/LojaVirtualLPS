@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Produto from './pages/Produto';
 import Navbar from './pages/Navbar';
+import Feature from './pages/feature-generic/Feature';
+import OptionalFeature from './pages/feature-generic/OptionalFeature';
 import MeuPerfil from './pages/MeuPerfil';
 import Carrinho from './pages/Carrinho';
 import {produtos} from './data/produtos.json';
-import {configuration} from './data/configuration.json';
+import {alternativeFeatureRule} from "./rules/rules.js";
+import AlternativeFeature from "./pages/feature-generic/AlternativeFeature";
 //---------------------------------------------------------
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
@@ -46,23 +49,30 @@ export default class App extends Component {
     }
   }
 
+  testRules(){
+    let bol = 1;
+    return bol === 1;
+  }
+
   render() {
     return (
       <div>
         <Router>
           <Switch>
-            <Route exact path='/'>
-              <Produto produtos={produtos} cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove}/>
+            <Route exact path='/'>       
+              <OptionalFeature component="ProductList" rules={this.testRules} produtos={produtos} cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove}/>
             </Route>
             <Route exact path= '/perfil' component= {MeuPerfil} />
             <Route exact path='/carrinho'>
-              <Carrinho cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove}/>
+              <AlternativeFeature cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove} rule={() =>                   alternativeFeatureRule()} />
             </Route>
           </Switch>
-          <Navbar />
+          <Feature component="NavbarDesktop" />
         </Router>
       </div>
     )
   }
 }
-
+//<AlternativeFeature optional name={} components={} />
+//<Produto produtos={produtos} cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove}/>
+//<Carrinho cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove}/>

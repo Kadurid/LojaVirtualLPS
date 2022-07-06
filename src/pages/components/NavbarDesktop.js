@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import '../css/Navbar.css';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';

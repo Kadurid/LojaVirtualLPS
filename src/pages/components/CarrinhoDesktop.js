@@ -28,7 +28,7 @@ export default class CarrinhoDesktop extends React.Component{
   }
 
  handleConfirmaCompra(){
-    if(this.state.carrinho.length!=0){
+    if(this.state.carrinho.length!==0){
       compra.push(carrinho);
       carrinho.pop(carrinho);
       this.setState({

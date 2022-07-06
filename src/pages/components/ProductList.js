@@ -1,8 +1,8 @@
-import React,{useState} from "react";
+import React from "react";
 import '../css/style.css';
 import '../css/Produto.css';
 
-export default class Produto extends React.Component{
+export default class ProductList extends React.Component{
 
   constructor(props){
     super(props);
@@ -31,7 +31,7 @@ export default class Produto extends React.Component{
           <div key={key} className="col-sm-6 col-md-3 produto">
             <div className="produto-item">
                 <div className="col-md-12">
-                    <figure><img src={data.img} className="img-responsive"/></figure>
+                    <figure><img alt="descricao" src={data.img} className="img-responsive"/></figure>
                 </div>
                 <div className="col-md-12 descricao">
                     <header>{data.descricao}</header>

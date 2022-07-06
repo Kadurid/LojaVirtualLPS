@@ -1,8 +1,8 @@
 {
   "configuration" : [
     {
-      "navbar": "mobile", 
-      "produtodisplay": "mobile", 
+      "navbar": "desktop", 
+      "produtodisplay": "desktop", 
       "carrinhodisplay": "mobile"
     }
   ]

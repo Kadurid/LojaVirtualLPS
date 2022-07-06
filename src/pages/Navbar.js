@@ -3,8 +3,6 @@ import {configuration} from '../data/configuration.json';
 import NavbarDesktop from './components/NavbarDesktop';
 import NavbarMobile from './components/NavbarMobile';
 
-
-
 export default class Navbar extends React.Component {
   constructor(props){
     super();
@@ -13,6 +11,7 @@ export default class Navbar extends React.Component {
     console.log(this.config[0].navbar);
     
   }
+  
   render(props){
     if(this.config[0].navbar === "mobile"){
       return <NavbarMobile />
