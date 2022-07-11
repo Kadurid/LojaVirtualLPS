@@ -1,21 +1,20 @@
-import * as config from "../data/config.json";
-
-export function carrinhoMobileRule (){
+export function navbarMobileRule (){
   let x = 1;
   return x == 1;
 }
 
-export function carrinhoDesktopRule (){
+export function navbarDesktopRule (){
   let x = 1;
   return x == 1;
 }
 
 export function alternativeFeatureRule(){
-  let x = 1;
-  if(x == 1){
-    return "CarrinhoMobile";
-  } else if(x == 2) {
-    return "CarrinhoDesktop"
+  //
+  let x = 2;
+  if(x === 1){
+    return "NavbarMobile";
+  } else if(x === 2) {
+    return "NavbarDesktop"
   } else {
     return null;
   }

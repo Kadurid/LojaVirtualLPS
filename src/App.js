@@ -64,15 +64,19 @@ export default class App extends Component {
             </Route>
             <Route exact path= '/perfil' component= {MeuPerfil} />
             <Route exact path='/carrinho'>
-              <AlternativeFeature cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove} rule={() =>                   alternativeFeatureRule()} />
+              <Carrinho cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove}/>
             </Route>
           </Switch>
-          <Feature component="NavbarDesktop" />
+          <AlternativeFeature components={[]} rule={() => alternativeFeatureRule()} />        
         </Router>
       </div>
     )
   }
 }
+//AlternativeFeature: Regra genérica que usam os componentes que estão como array como argumento;
+
+//Colocar situações mais reais no estudo de caso, nas regras, usar regras baseadas em tamanho de tela/navegador/etc.
+
 //<AlternativeFeature optional name={} components={} />
 //<Produto produtos={produtos} cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove}/>
-//<Carrinho cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove}/>
+// <Feature component="NavbarDesktop" />
