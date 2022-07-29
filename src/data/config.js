@@ -1,5 +1,10 @@
 export const config = 
 {
+
+  "ProductList": {
+    "path": "../components/ProductList",
+    "rule": "src/rules/navbarDesktopRule"
+  },
   "CarrinhoMobile": {
     "path": "./../components/CarrinhoMobile",
     "rule": "carrinhoMobileRule"
@@ -10,10 +15,13 @@ export const config =
   },
   "NavbarDesktop": {
     "path": "./../components/NavbarDesktop",
-    "rule": "navbarDesktopRule"
+    "rule": "./../../rules/navbarDesktopRule"
   },
   "NavbarMobile": {
     "path": "./../components/NavbarMobile",
     "rule": "navbarMobileRule"
+  },
+  "genericRule": {
+    "path": "../../rules/genericRule",
   }
 }

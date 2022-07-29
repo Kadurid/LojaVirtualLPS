@@ -9,6 +9,10 @@ import Carrinho from './pages/Carrinho';
 import {produtos} from './data/produtos.json';
 import {alternativeFeatureRule} from "./rules/rules.js";
 import AlternativeFeature from "./pages/feature-generic/AlternativeFeature";
+import genericRule from "./rules/genericRule";
+import {config} from "./data/config.js";
+import {navbarMobileRule} from"./rules/rules.js"
+import {navbarDesktopRule} from "./rules/rules.js"
 //---------------------------------------------------------
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
@@ -60,14 +64,14 @@ export default class App extends Component {
         <Router>
           <Switch>
             <Route exact path='/'>       
-              <OptionalFeature component="ProductList" rules={this.testRules} produtos={produtos} cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove}/>
+              <OptionalFeature component="ProductSlider" rules={this.testRules} produtos={produtos} cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove}/>
             </Route>
             <Route exact path= '/perfil' component= {MeuPerfil} />
             <Route exact path='/carrinho'>
-              <Carrinho cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove}/>
+              <Feature component = "CarrinhoDesktop" cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove} />
             </Route>
           </Switch>
-          <AlternativeFeature components={[]} rule={() => alternativeFeatureRule()} />        
+          <AlternativeFeature optional components={[{component: "NavbarMobile", rule: navbarMobileRule}, {component : "NavbarDesktop",               rule: navbarDesktopRule}]}  rule={genericRule}  />        
         </Router>
       </div>
     )

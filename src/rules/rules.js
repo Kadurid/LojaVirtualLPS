@@ -1,11 +1,9 @@
 export function navbarMobileRule (){
-  let x = 1;
-  return x == 1;
+  return window.innerHeight <= 800
 }
 
 export function navbarDesktopRule (){
-  let x = 1;
-  return x == 1;
+  return window.innerHeight > 800
 }
 
 export function alternativeFeatureRule(){

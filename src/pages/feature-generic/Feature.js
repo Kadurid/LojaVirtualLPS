@@ -6,6 +6,10 @@ export default class Feature extends React.Component {
     //Se a estrutura de diretórios diferir de estar na mesma pasta, pode dar erro
     //Usar o caminho por base de arquivo de config, json
     super();
+    this.state = {
+      carrinho: [],
+      total: 0
+    };
     this.Component = React.lazy(() => import("../components/"+ props.component +""))
   }
 
