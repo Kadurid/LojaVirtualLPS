@@ -10,7 +10,7 @@ export default class Feature extends React.Component {
       carrinho: [],
       total: 0
     };
-    this.Component = React.lazy(() => import("../components/"+ props.component +""))
+    this.Component = React.lazy(() => import("../featureComponents/"+ props.component +""))
   }
 
   render(){

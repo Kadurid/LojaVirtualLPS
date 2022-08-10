@@ -1,7 +1,7 @@
 import React from 'react';
 import {configuration} from '../data/configuration.json';
-import CarrinhoDesktop from './components/CarrinhoDesktop';
-import CarrinhoMobile from './components/CarrinhoMobile';
+import CarrinhoDesktop from './featureComponents/CarrinhoDesktop';
+import CarrinhoMobile from './featureComponents/CarrinhoMobile';
 
 export default class Carrinho extends React.Component {
   constructor(props){

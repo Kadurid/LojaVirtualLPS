@@ -26,6 +26,7 @@ export default class App extends Component {
     }
    this.onAdd = this.onAdd.bind(this);
    this.onRemove = this.onRemove.bind(this);
+   this.bol = 1;  
    console.log(this.state.cartItems);
   }
   
@@ -52,7 +53,7 @@ export default class App extends Component {
       product.qtd = product.qtd - 1;
     }
   }
-
+  
   testRules(){
     let bol = 1;
     return bol === 1;
@@ -71,7 +72,7 @@ export default class App extends Component {
               <Feature component = "CarrinhoDesktop" cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove} />
             </Route>
           </Switch>
-          <AlternativeFeature optional components={[{component: "NavbarMobile", rule: navbarMobileRule}, {component : "NavbarDesktop",               rule: navbarDesktopRule}]}  rule={genericRule}  />        
+          <AlternativeFeature optional components={[{component: "NavbarMobile", rule: navbarMobileRule}, {component : "NavbarDesktop", rule: navbarDesktopRule}]}  rule={genericRule}  />        
         </Router>
       </div>
     )

@@ -7,7 +7,7 @@ export default class OptionalFeature extends React.Component {
   {
     //Se a estrutura de diretórios diferir de estar na mesma pasta, pode dar erro
     super();
-    this.Component = React.lazy(() => import("../components/"+ props.component +""));
+    this.Component = React.lazy(() => import("../featureComponents/"+ props.component +""));
     //this.Component = React.lazy(async() => await import(props.componentPath));
     //let texto = "" + config[props.component].path + ""
     //let texto = "../components/"+ props.component +"";
