@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {SidebarData} from './SidebarData';
-import '../css/Navbar.css';
+import '../pages/css/Navbar.css';
 import {InputText} from 'primereact/inputtext';
 
 export default class NavbarMobile extends React.Component{

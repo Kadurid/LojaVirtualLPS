@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Carousel } from 'primereact/carousel';
-import '../css/Produto.css';
-import '../css/style.css';
+import '../pages/css/Produto.css';
+import '../pages/css/style.css';
 
 export default class ProductSlider extends Component {
   constructor(props){

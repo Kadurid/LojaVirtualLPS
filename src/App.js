@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Produto from './pages/Produto';
-import Navbar from './pages/Navbar';
-import Feature from './pages/feature-generic/Feature';
+import MandatoryFeature from './pages/feature-generic/Feature';
 import OptionalFeature from './pages/feature-generic/OptionalFeature';
 import MeuPerfil from './pages/MeuPerfil';
-import Carrinho from './pages/Carrinho';
 import {produtos} from './data/produtos.json';
-import {alternativeFeatureRule} from "./rules/rules.js";
 import AlternativeFeature from "./pages/feature-generic/AlternativeFeature";
 import genericRule from "./rules/genericRule";
-import {config} from "./data/config.js";
 import {navbarMobileRule} from"./rules/rules.js"
 import {navbarDesktopRule} from "./rules/rules.js"
 //---------------------------------------------------------
@@ -54,9 +49,8 @@ export default class App extends Component {
     }
   }
   
-  testRules(){
-    let bol = 1;
-    return bol === 1;
+  testRules(cartItems){
+    return cartItems.length > 0;
   }
 
   render() {
@@ -65,14 +59,14 @@ export default class App extends Component {
         <Router>
           <Switch>
             <Route exact path='/'>       
-              <OptionalFeature component="ProductSlider" rules={this.testRules} produtos={produtos} cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove}/>
+              <MandatoryFeature component="ProductList" produtos={produtos} cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove}/>
             </Route>
             <Route exact path= '/perfil' component= {MeuPerfil} />
             <Route exact path='/carrinho'>
-              <Feature component = "CarrinhoDesktop" cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove} />
+              <OptionalFeature component = "CarrinhoDesktop" rules={() => this.testRules(this.state.cartItems)} cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove} />
             </Route>
           </Switch>
-          <AlternativeFeature optional components={[{component: "NavbarMobile", rule: navbarMobileRule}, {component : "NavbarDesktop", rule: navbarDesktopRule}]}  rule={genericRule}  />        
+          <AlternativeFeature components={[{component: "NavbarMobile", rule: navbarMobileRule}, {component : "NavbarDesktop", rule: navbarDesktopRule}]}  rule={genericRule}  />        
         </Router>
       </div>
     )

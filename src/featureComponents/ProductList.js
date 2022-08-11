@@ -1,6 +1,6 @@
 import React from "react";
-import '../css/style.css';
-import '../css/Produto.css';
+import '../pages/css/style.css';
+import '../pages/css/Produto.css';
 
 export default class ProductList extends React.Component{
 

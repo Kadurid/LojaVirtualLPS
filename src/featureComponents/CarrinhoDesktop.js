@@ -1,6 +1,6 @@
 import React from 'react';
-import {carrinho} from "./../../data/carrinho.json";
-import {compra} from './../../data/compra.json';
+import {carrinho} from "../data/carrinho.json";
+import {compra} from '../data/compra.json';
 import { InputNumber } from 'primereact/inputnumber';
 
 export default class CarrinhoDesktop extends React.Component{

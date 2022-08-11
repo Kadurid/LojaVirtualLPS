@@ -1,5 +1,5 @@
 import React from "react";
-import '../css/Navbar.css';
+import '../pages/css/Navbar.css';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { Router, Route, Link} from 'react-router-dom';

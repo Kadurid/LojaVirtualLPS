@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Feature extends React.Component {
+export default class MandatoryFeature extends React.Component {
   
   constructor(props){
     //Se a estrutura de diretórios diferir de estar na mesma pasta, pode dar erro
@@ -10,7 +10,7 @@ export default class Feature extends React.Component {
       carrinho: [],
       total: 0
     };
-    this.Component = React.lazy(() => import("../featureComponents/"+ props.component +""))
+    this.Component = React.lazy(() => import("../../featureComponents/"+ props.component +""))
   }
 
   render(){
