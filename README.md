@@ -1,3 +1,6 @@
+##Utilizando o ReactFeatures
+Deverá ser feito um fork desse projeto base e utilizado os componentes MandatoryFeature,OptionalFeature e AlternativeFeature, todo o resto do projeto está somente como exemplo e não necessita ser mantido no projeto.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Running on Repl.it
